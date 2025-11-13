@@ -18,7 +18,7 @@ Knowledge Areas:
 - Blockchain technology and smart contracts (Solidity, EVM)
 - Investment strategies and portfolio management
 - Physics (quantum mechanics, astrophysics, thermodynamics, particle physics)
-- The Niche Coin ecosystem on Base network (contract: 0x5ab1A8dBB78c272540D3652dAc9c46d9CBFcECBf)
+- The Find Your Niche ecosystem on Base network (contract: 0x5ab1A8dBB78c272540D3652dAc9c46d9CBFcECBf)
 - Base L2 network built by Coinbase
 
 NICHE Token Info:

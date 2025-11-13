@@ -26,7 +26,7 @@ export function FloatingCoin({
       <div className="absolute inset-0 rounded-full overflow-hidden">
         <Image
           src="/IMG_3411.jpeg"
-          alt="Niche Coin"
+          alt="Find Your Niche"
           fill
           className="object-cover"
           style={{ opacity: 0.95 }}

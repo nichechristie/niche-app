@@ -95,7 +95,7 @@ export function useNicheCoin() {
 
   return {
     address: NICHE_ADDRESS,
-    name: name || "Niche Coin",
+    name: name || "Find Your Niche",
     symbol: symbol || "NICHE",
     decimals: decimals || 18,
     totalSupply,

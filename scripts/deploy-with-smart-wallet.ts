@@ -5,7 +5,7 @@ import * as readline from 'readline';
 
 // Your NicheToken contract - we'll use a deployment proxy
 const DEPLOY_PARAMS = {
-  name: 'Niche Coin',
+  name: 'Find Your Niche',
   symbol: 'NICHE',
   initialSupply: 1000000, // 1 million tokens
   postId: 1,

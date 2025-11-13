@@ -6,7 +6,7 @@ export const config = createConfig({
   chains: [mainnet, base, sepolia, baseSepolia],
   connectors: [
     coinbaseWallet({
-      appName: "Niche Coin",
+      appName: "Find Your Niche",
       preference: "smartWalletOnly",
     }),
     injected({ shimDisconnect: true }),

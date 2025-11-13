@@ -28,7 +28,7 @@ Go to: **https://remix.ethereum.org**
 Fill in these parameters (one per line):
 
 ```
-NAME: Niche Coin
+NAME: Find Your Niche
 SYMBOL: NICHE
 INITIALSUPPLY: 1000000
 _CREATOR: [YOUR_WALLET_ADDRESS - copy from your wallet]

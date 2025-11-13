@@ -59,7 +59,7 @@ async function deployNicheToken() {
   }
 
   console.log('📝 Token Parameters:');
-  console.log('   Name: Niche Coin');
+  console.log('   Name: Find Your Niche');
   console.log('   Symbol: NICHE');
   console.log('   Initial Supply: 1,000,000 NICHE');
   console.log('   Decimals: 18\n');
@@ -78,7 +78,7 @@ async function deployNicheToken() {
   console.log('   - forge create --rpc-url https://mainnet.base.org \\');
   console.log('     --private-key YOUR_KEY \\');
   console.log('     contracts/NicheToken.sol:NicheToken \\');
-  console.log('     --constructor-args "Niche Coin" "NICHE" 1000000000000000000000000 YOUR_ADDRESS 1 "The Future of Creator Economy"\n');
+  console.log('     --constructor-args "Find Your Niche" "NICHE" 1000000000000000000000000 YOUR_ADDRESS 1 "The Future of Creator Economy"\n');
 
   console.log('After deployment, update lib/nicheToken.ts with the new contract address.');
 }

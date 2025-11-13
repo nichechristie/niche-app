@@ -14,7 +14,7 @@ export default function Home() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
 
         {/* 3D Crypto Elements */}
-        {/* Floating Coins - Using custom Niche Coin image */}
+        {/* Floating Coins - Using custom Find Your Niche image */}
         <FloatingCoin
           size={100}
           className="absolute top-32 right-1/4 animate-rotate-3d"
@@ -63,7 +63,7 @@ export default function Home() {
             🚀 The Future of Creator Economy
           </div>
           <h1 className="text-6xl md:text-7xl font-bold glow-text text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-            Welcome to Niche Coin
+            Welcome to Find Your Niche
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Trade creator coins and content coins. Every post becomes an{" "}

@@ -24,7 +24,7 @@ export async function GET() {
     },
     miniapp: {
       version: "1",
-      name: "Niche Coin",
+      name: "Find Your Niche",
       homeUrl: URL,
       iconUrl: `${URL}/IMG_3411.jpeg`,
       splashImageUrl: `${URL}/IMG_3411.jpeg`,
@@ -39,7 +39,7 @@ export async function GET() {
       tags: ["crypto", "creator-economy", "trading", "base", "coins", "social"],
       heroImageUrl: `${URL}/IMG_3411.jpeg`,
       tagline: "Every post is a tradeable token",
-      ogTitle: "Niche Coin - Creator Economy Platform",
+      ogTitle: "Find Your Niche - Creator Economy Platform",
       ogDescription: "Trade creator coins and content coins. Every post becomes an instantly tradeable cryptocurrency token on Base.",
       ogImageUrl: `${URL}/IMG_3411.jpeg`,
       noindex: false

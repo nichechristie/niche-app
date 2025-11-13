@@ -24,7 +24,7 @@
    - RPC: https://mainnet.base.org
 4. Fill in constructor parameters:
    ```
-   NAME: "Niche Coin"
+   NAME: "Find Your Niche"
    SYMBOL: "NICHE"
    INITIALSUPPLY: 1000000 (this is 1 million tokens)
    _CREATOR: [Your wallet address - same one you're deploying from]
@@ -84,7 +84,7 @@ forge create --rpc-url https://mainnet.base.org \
   --private-key YOUR_PRIVATE_KEY \
   contracts/NicheToken.sol:NicheToken \
   --constructor-args \
-    "Niche Coin" \
+    "Find Your Niche" \
     "NICHE" \
     1000000000000000000000000 \
     YOUR_WALLET_ADDRESS \

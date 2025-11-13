@@ -23,7 +23,7 @@ export async function GET(
         username: userId.slice(0, 6) + "..." + userId.slice(-4),
         displayName: userId.slice(0, 6) + "..." + userId.slice(-4),
         avatar: undefined,
-        bio: "New to Niche Coin",
+        bio: "New to Find Your Niche",
         followers: [],
         following: [],
         createdAt: new Date(),

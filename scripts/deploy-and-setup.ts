@@ -113,7 +113,7 @@ async function main() {
   console.log('  3. Compile with Solidity 0.8.20');
   console.log('  4. Connect MetaMask to Base network');
   console.log('  5. Deploy with these parameters:');
-  console.log('     - NAME: "Niche Coin"');
+  console.log('     - NAME: "Find Your Niche"');
   console.log('     - SYMBOL: "NICHE"');
   console.log('     - INITIALSUPPLY: 1000000');
   console.log('     - _CREATOR: [Your wallet address]');
@@ -125,7 +125,7 @@ async function main() {
   console.log('  forge create --rpc-url https://mainnet.base.org \\');
   console.log('    --private-key YOUR_KEY \\');
   console.log('    contracts/NicheToken.sol:NicheToken \\');
-  console.log('    --constructor-args "Niche Coin" "NICHE" 1000000000000000000000000 YOUR_ADDRESS 1 "Description"\n');
+  console.log('    --constructor-args "Find Your Niche" "NICHE" 1000000000000000000000000 YOUR_ADDRESS 1 "Description"\n');
 
   const proceed = await prompt('Have you deployed the contract? (yes/no): ');
 
