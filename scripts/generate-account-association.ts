@@ -18,21 +18,17 @@ import { base } from 'viem/chains';
 async function generateAccountAssociation() {
   console.log('🔐 Farcaster Account Association Generator\n');
 
-  // Configuration - UPDATE THESE VALUES
+  // Configuration
   const config = {
-    fid: 0, // Your Farcaster FID
-    custodyAddress: '0x', // Your Farcaster custody address
-    privateKey: '0x', // Private key that controls your FID
-    domain: 'localhost:3005', // Your domain (use production domain for deployment)
+    fid: 1438723, // FID for nicheai
+    custodyAddress: '0xbe3c16e0910eae28d0ac1cc3547b0079b823089c', // Custody address for nicheai
+    privateKey: process.argv[2], // Private key from command line
+    domain: process.argv[3], // Domain from command line
   };
 
-  if (config.fid === 0 || config.custodyAddress === '0x' || config.privateKey === '0x') {
-    console.error('❌ Please update the config values in this script first!\n');
-    console.log('You need to provide:');
-    console.log('- fid: Your Farcaster ID');
-    console.log('- custodyAddress: Your Farcaster custody address');
-    console.log('- privateKey: Private key for signing');
-    console.log('- domain: Your app domain\n');
+  if (!config.privateKey || !config.domain) {
+    console.error('❌ Please provide the private key and domain as command-line arguments.\n');
+    console.log('Usage: npx tsx scripts/generate-account-association.ts <privateKey> <domain>\n');
     return;
   }
 
