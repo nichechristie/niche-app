@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createPublicClient, createWalletClient, http, parseEther } from "viem";
 import { base } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
+import { uploadFile } from "@/lib/server/uploadFile";
 
 // Mock database (replace with actual database in production)
 let posts: any[] = [];
@@ -39,21 +40,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Handle media upload
+    // Handle media upload to Vercel Blob Storage
     let mediaUrl = "";
     if (mediaFile) {
-      // In production, upload to IPFS, Arweave, or cloud storage
-      // For now, we'll create a local URL (this won't work in production)
-      const bytes = await mediaFile.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      // TODO: Upload to IPFS/Arweave
-      // For demo, we'll use a placeholder
-      mediaUrl = `/uploads/${Date.now()}-${mediaFile.name}`;
-
-      // In production:
-      // const ipfsHash = await uploadToIPFS(buffer);
-      // mediaUrl = `https://ipfs.io/ipfs/${ipfsHash}`;
+      try {
+        mediaUrl = await uploadFile(mediaFile, "posts");
+        console.log(`File uploaded successfully: ${mediaUrl}`);
+      } catch (error) {
+        console.error("Failed to upload media:", error);
+        return NextResponse.json(
+          { error: "Failed to upload media file" },
+          { status: 500 }
+        );
+      }
     }
 
     // Create token on Base network
@@ -81,6 +80,30 @@ export async function POST(request: NextRequest) {
     //   args: [coinName, coinSymbol, parseEther("1000000")],
     // });
 
+    // Create token metadata with uploaded image
+    const tokenMetadata = {
+      name: coinName,
+      symbol: coinSymbol,
+      description: content || `${coinName} (${coinSymbol}) - A content coin on Find Your Niche`,
+      image: mediaUrl || "/IMG_3411.jpeg", // Use uploaded image or fallback to default
+      animation_url: mediaType === "video" ? mediaUrl : undefined,
+      external_url: mediaUrl || undefined,
+      attributes: [
+        {
+          trait_type: "Creator",
+          value: address,
+        },
+        {
+          trait_type: "Content Type",
+          value: mediaType || "text",
+        },
+        {
+          trait_type: "Created At",
+          value: new Date().toISOString(),
+        },
+      ],
+    };
+
     // Create post
     const post = {
       id: Date.now().toString(),
@@ -93,6 +116,7 @@ export async function POST(request: NextRequest) {
       coinAddress: tokenAddress,
       coinSymbol,
       coinName,
+      coinMetadata: tokenMetadata,
       likes: [],
       comments: [],
       createdAt: new Date(),
@@ -105,7 +129,8 @@ export async function POST(request: NextRequest) {
       post,
       coinAddress: tokenAddress,
       coinSymbol,
-      message: "Post created and token minted successfully",
+      metadata: tokenMetadata,
+      message: "Post created and token minted successfully with metadata",
     });
   } catch (error) {
     console.error("Error creating post:", error);
