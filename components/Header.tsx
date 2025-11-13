@@ -49,6 +49,13 @@ export function Header() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all"></span>
               </Link>
               <Link
+                href="/bible"
+                className="text-gray-300 hover:text-indigo-400 transition-colors relative group flex items-center gap-1"
+              >
+                📖 Bible Study
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all"></span>
+              </Link>
+              <Link
                 href="/blackjack"
                 className="text-gray-300 hover:text-indigo-400 transition-colors relative group flex items-center gap-1"
               >
@@ -128,6 +135,13 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Create
+              </Link>
+              <Link
+                href="/bible"
+                className="text-gray-300 hover:text-indigo-400 transition-colors px-2 py-2 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                📖 Bible Study
               </Link>
               <Link
                 href="/blackjack"
