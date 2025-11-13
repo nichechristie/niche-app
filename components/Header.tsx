@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { WalletButton } from "./WalletButton";
+import { Avatar3D } from "./Avatar3D";
 
 export function Header() {
   return (
@@ -11,15 +11,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-indigo-500 shadow-lg shadow-indigo-500/50 group-hover:shadow-indigo-500/80 transition-all group-hover:scale-110">
-                <Image
-                  src="/IMG_3411.jpeg"
-                  alt="Niche Coin"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-              </div>
+              <Avatar3D size={40} />
               <span className="text-2xl font-bold glow-text text-indigo-400 group-hover:text-indigo-300 transition-colors">
                 Niche Coin
               </span>

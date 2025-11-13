@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     description: "Trade creator coins and content coins on Base",
     images: ['/IMG_3411.jpeg'],
   },
+  other: {
+    // Farcaster Mini App metadata (NOT fc:frame - that's for legacy Frames v1)
+    'fc:miniapp': 'manifest',
+    'fc:miniapp:manifest': '/.well-known/farcaster.json',
+  },
 };
 
 export default function RootLayout({
