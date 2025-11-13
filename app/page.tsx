@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { RewardsBanner } from "@/components/RewardsBanner";
 import { FloatingCoin } from "@/components/FloatingCoin";
 import Link from "next/link";
 
@@ -6,6 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col grid-bg">
       <Header />
+      <RewardsBanner />
       <main className="flex-1 flex flex-col items-center justify-center p-8 gap-12 relative overflow-hidden">
         {/* Animated background orbs */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500/20 rounded-full blur-3xl animate-float"></div>
