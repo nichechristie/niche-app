@@ -16,7 +16,7 @@ export function Header() {
             <Link href="/" className="flex items-center gap-3 group">
               <Avatar3D size={40} />
               <span className="text-2xl font-bold glow-text text-indigo-400 group-hover:text-indigo-300 transition-colors">
-                Niche Coin
+                Find your NICHE
               </span>
             </Link>
             <nav className="hidden md:flex gap-6">
