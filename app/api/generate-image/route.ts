@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       response_format: "url",
     });
 
-    const imageUrl = response.data[0]?.url;
+    const imageUrl = response.data?.[0]?.url;
 
     if (!imageUrl) {
       return NextResponse.json(
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
       success: true,
       imageUrl: uploadedUrl,
       originalPrompt: prompt,
-      revisedPrompt: response.data[0]?.revised_prompt,
+      revisedPrompt: response.data?.[0]?.revised_prompt,
     });
   } catch (error: any) {
     console.error("Error generating image:", error);
