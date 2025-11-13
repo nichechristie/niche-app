@@ -2,7 +2,7 @@
 
 import { Header } from "@/components/Header";
 import { FloatingCoin } from "@/components/FloatingCoin";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useAccount, useWalletClient, usePublicClient } from "wagmi";
 import { createCoin, CreateConstants } from "@/lib/niche-sdk";
 import { base } from "viem/chains";
@@ -20,6 +20,90 @@ export default function CreatePage() {
   const [isCreating, setIsCreating] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string>("");
+  const [imagePrompt, setImagePrompt] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedImageUrl, setGeneratedImageUrl] = useState("");
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imagePreview, setImagePreview] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      setError("Please select an image file");
+      return;
+    }
+
+    setImageFile(file);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const generateImage = async () => {
+    if (!imagePrompt.trim()) {
+      setError("Please enter a prompt to generate an image");
+      return;
+    }
+
+    setIsGenerating(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/generate-image", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt: imagePrompt }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to generate image");
+      }
+
+      const data = await response.json();
+      setGeneratedImageUrl(data.imageUrl);
+      setImagePreview(data.imageUrl);
+
+      // Set the generated image URL as metadata URI
+      setFormData({ ...formData, metadataUri: data.imageUrl });
+      setImagePrompt("");
+    } catch (error) {
+      console.error("Error generating image:", error);
+      setError("Failed to generate image. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const uploadImage = async () => {
+    if (!imageFile) return null;
+
+    try {
+      const uploadFormData = new FormData();
+      uploadFormData.append("media", imageFile);
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: uploadFormData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to upload image");
+      }
+
+      const data = await response.json();
+      return data.url;
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      throw error;
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -129,24 +213,86 @@ export default function CreatePage() {
                 />
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-indigo-300 mb-2">
-                  Metadata URI
-                </label>
-                <input
-                  type="url"
-                  required
-                  value={formData.metadataUri}
-                  onChange={(e) =>
-                    setFormData({ ...formData, metadataUri: e.target.value })
-                  }
-                  className="w-full px-4 py-2 bg-white/5 border border-indigo-500/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400"
-                  placeholder="ipfs://..."
-                />
-                <p className="text-sm text-gray-400 mt-1">
-                  IPFS or HTTP URL to your coin metadata
-                </p>
-              </div>
+              {/* Image Preview */}
+              {imagePreview && (
+                <div className="relative rounded-lg overflow-hidden">
+                  <img src={imagePreview} alt="Coin image" className="w-full h-64 object-cover rounded-lg" />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setImagePreview("");
+                      setImageFile(null);
+                      setGeneratedImageUrl("");
+                      setFormData({ ...formData, metadataUri: "" });
+                    }}
+                    className="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              )}
+
+              {/* Image Upload & AI Generator */}
+              {!imagePreview && (
+                <div className="space-y-4">
+                  {/* Upload Button */}
+                  <div>
+                    <label className="block text-sm font-medium text-indigo-300 mb-2">
+                      Coin Image
+                    </label>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFileSelect}
+                      className="hidden"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="w-full px-4 py-3 bg-slate-800/50 hover:bg-slate-700/50 border border-indigo-500/30 rounded-lg text-gray-300 transition-colors flex items-center justify-center gap-2"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      Upload Image
+                    </button>
+                  </div>
+
+                  {/* AI Image Generator */}
+                  <div className="p-4 bg-gradient-to-r from-purple-900/20 to-indigo-900/20 border border-purple-500/30 rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      <span className="text-sm font-medium text-purple-300">AI Image Generator</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={imagePrompt}
+                        onChange={(e) => setImagePrompt(e.target.value)}
+                        placeholder="Describe your coin image..."
+                        className="flex-1 px-3 py-2 bg-slate-800/50 border border-purple-500/30 rounded-lg text-white placeholder-gray-500 text-sm focus:outline-none focus:border-purple-500"
+                        disabled={isGenerating}
+                      />
+                      <button
+                        type="button"
+                        onClick={generateImage}
+                        disabled={isGenerating || !imagePrompt.trim()}
+                        className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed text-white rounded-lg font-medium text-sm transition-all"
+                      >
+                        {isGenerating ? "Generating..." : "Generate"}
+                      </button>
+                    </div>
+                    <p className="text-xs text-gray-400 mt-2">
+                      Powered by DALL-E 3 - Generate unique coin artwork
+                    </p>
+                  </div>
+                </div>
+              )}
 
               {error && (
                 <div className="p-4 bg-red-500/10 border border-red-500/50 rounded-lg text-red-400">
