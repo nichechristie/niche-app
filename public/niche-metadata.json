@@ -1,0 +1,30 @@
+{
+  "name": "Niche Coin",
+  "symbol": "NICHE",
+  "description": "The Future of Creator Economy - Trade creator coins and content coins. Every post becomes an instantly tradeable cryptocurrency token on Base.",
+  "image": "https://YOUR_VERCEL_DOMAIN.vercel.app/IMG_3411.jpeg",
+  "external_url": "https://YOUR_VERCEL_DOMAIN.vercel.app",
+  "decimals": 18,
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Creator Coin"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Protocol",
+      "value": "Niche"
+    }
+  ],
+  "properties": {
+    "category": "token",
+    "creators": [
+      {
+        "address": "0x5ab1A8dBB78c272540D3652dAc9c46d9CBFcECBf"
+      }
+    ]
+  }
+}
