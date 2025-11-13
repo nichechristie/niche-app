@@ -42,7 +42,7 @@ export default function CreatePage() {
             type: "RAW_URI" as const,
             uri: formData.metadataUri,
           },
-          currency: CreateConstants.ContentCoinCurrencies.NICHE,
+          currency: CreateConstants.ContentCoinCurrencies.ETH,
           chainId: base.id,
           startingMarketCap: CreateConstants.StartingMarketCaps.LOW,
         },
