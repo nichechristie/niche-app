@@ -20,7 +20,7 @@ export function Avatar3D({ size = 40, className = "" }: Avatar3DProps) {
 
   return (
     <div
-      className={`relative rounded-full overflow-hidden border-2 border-indigo-500 shadow-lg shadow-indigo-500/50 group-hover:shadow-indigo-500/80 transition-all group-hover:scale-110 avatar-3d ${className}`}
+      className={`relative rounded-full overflow-hidden border-2 border-indigo-500 shadow-lg shadow-indigo-500/50 group-hover:shadow-indigo-500/80 transition-all group-hover:scale-105 ${className}`}
       style={{ width: `${size}px`, height: `${size}px` }}
     >
       <video
@@ -34,41 +34,6 @@ export function Avatar3D({ size = 40, className = "" }: Avatar3DProps) {
         <source src="/avatar.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
-
-      <style jsx>{`
-        .avatar-3d {
-          transform-style: preserve-3d;
-          animation: float-rotate 6s ease-in-out infinite;
-        }
-
-        @keyframes float-rotate {
-          0%, 100% {
-            transform: translateY(0px) rotateY(0deg);
-          }
-          25% {
-            transform: translateY(-5px) rotateY(5deg);
-          }
-          50% {
-            transform: translateY(0px) rotateY(0deg);
-          }
-          75% {
-            transform: translateY(-5px) rotateY(-5deg);
-          }
-        }
-
-        .avatar-3d:hover {
-          animation: spin-3d 2s ease-in-out infinite;
-        }
-
-        @keyframes spin-3d {
-          0% {
-            transform: rotateY(0deg);
-          }
-          100% {
-            transform: rotateY(360deg);
-          }
-        }
-      `}</style>
     </div>
   );
 }
