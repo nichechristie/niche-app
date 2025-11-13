@@ -34,14 +34,24 @@ export async function POST(request: NextRequest) {
 
     testimonies.push(testimony);
 
-    // TODO: Transfer NICHE tokens to user's wallet for sharing testimony
-    console.log(`Rewarded ${TESTIMONY_REWARD} NICHE to ${address} for sharing testimony: ${title}`);
+    // Mint NICHE tokens to user's wallet for sharing testimony
+    const { mintNicheTokens } = await import("@/lib/server/mintTokens");
+    const mintResult = await mintNicheTokens(address, TESTIMONY_REWARD);
+
+    if (!mintResult.success) {
+      console.warn("Token minting failed:", mintResult.error);
+      // Continue anyway - testimony is still saved
+    } else {
+      console.log(`Minted ${TESTIMONY_REWARD} NICHE to ${address} for sharing testimony: ${title}. TX: ${mintResult.txHash}`);
+    }
 
     return NextResponse.json({
       success: true,
       testimony,
       reward: TESTIMONY_REWARD,
       message: `Testimony shared! You earned ${TESTIMONY_REWARD} NICHE tokens!`,
+      txHash: mintResult.txHash,
+      mintingEnabled: mintResult.success,
     });
   } catch (error) {
     console.error("Error creating testimony:", error);

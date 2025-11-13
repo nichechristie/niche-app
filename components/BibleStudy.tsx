@@ -331,7 +331,7 @@ export function BibleStudy() {
                     e.stopPropagation();
                     startLesson(lesson);
                   }}
-                  className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white rounded-lg font-semibold transition-all"
+                  className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white rounded-lg font-semibold transition-all shadow-lg active:scale-95"
                 >
                   Start Lesson
                 </button>

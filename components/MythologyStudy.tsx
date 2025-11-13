@@ -331,7 +331,7 @@ export function MythologyStudy() {
                     e.stopPropagation();
                     startLesson(lesson);
                   }}
-                  className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-semibold transition-all"
+                  className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg font-semibold transition-all shadow-lg active:scale-95"
                 >
                   Start Lesson
                 </button>

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Providers } from "@/lib/providers";
 import { NicheChatbot } from "@/components/NicheChatbot";
 import { Niche3DAvatar } from "@/components/Niche3DAvatar";
+import { FloatingText3D } from "@/components/FloatingText3D";
 
 export const metadata: Metadata = {
   title: "Niche Coin - Creator Economy Platform",
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
+          <FloatingText3D />
           {children}
           <NicheChatbot />
           <Niche3DAvatar />

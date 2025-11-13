@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
 
     const likeIndex = testimony.likes.indexOf(address);
 
+    let mintResult;
     if (likeIndex > -1) {
       // Unlike
       testimony.likes.splice(likeIndex, 1);
@@ -33,14 +34,23 @@ export async function POST(request: NextRequest) {
       // Like
       testimony.likes.push(address);
 
-      // TODO: Reward testimony author with 0.5 NICHE per like
-      console.log(`${address} liked testimony by ${testimony.userId}`);
+      // Reward testimony author with 0.5 NICHE per like
+      const { mintNicheTokens } = await import("@/lib/server/mintTokens");
+      mintResult = await mintNicheTokens(testimony.userId, "0.5");
+
+      if (!mintResult.success) {
+        console.warn("Token minting failed:", mintResult.error);
+      } else {
+        console.log(`${address} liked testimony by ${testimony.userId}. Minted 0.5 NICHE to author. TX: ${mintResult.txHash}`);
+      }
     }
 
     return NextResponse.json({
       success: true,
       likes: testimony.likes.length,
       liked: likeIndex === -1,
+      txHash: mintResult?.txHash,
+      mintingEnabled: mintResult?.success,
     });
   } catch (error) {
     console.error("Error liking testimony:", error);

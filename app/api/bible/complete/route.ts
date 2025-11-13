@@ -84,8 +84,16 @@ export async function POST(request: NextRequest) {
     // Save progress
     userProgress.set(address.toLowerCase(), progress);
 
-    // TODO: Transfer NICHE tokens to user's wallet
-    console.log(`Rewarded ${lesson.reward} NICHE to ${address} for completing ${lesson.title}`);
+    // Mint NICHE tokens to user's wallet
+    const { mintNicheTokens } = await import("@/lib/server/mintTokens");
+    const mintResult = await mintNicheTokens(address, lesson.reward);
+
+    if (!mintResult.success) {
+      console.warn("Token minting failed:", mintResult.error);
+      // Continue anyway - we still want to track progress even if minting fails
+    } else {
+      console.log(`Minted ${lesson.reward} NICHE to ${address} for completing ${lesson.title}. TX: ${mintResult.txHash}`);
+    }
 
     return NextResponse.json({
       success: true,
@@ -94,6 +102,8 @@ export async function POST(request: NextRequest) {
       totalRewards: progress.totalRewardsEarned,
       completedLessons: progress.completedLessons,
       streak: progress.currentStreak,
+      txHash: mintResult.txHash,
+      mintingEnabled: mintResult.success,
     });
   } catch (error) {
     console.error("Error completing lesson:", error);
