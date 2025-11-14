@@ -19,16 +19,15 @@ export async function GET() {
       payload: ACCOUNT_ASSOCIATION_PAYLOAD,
       signature: ACCOUNT_ASSOCIATION_SIGNATURE
     },
-    baseBuilder: {
-      ownerAddress: BASE_OWNER_ADDRESS
-    },
-    miniapp: {
+    frame: {
       version: "1",
       name: "Find Your Niche",
       homeUrl: URL,
       iconUrl: `${URL}/IMG_3411.jpeg`,
+      imageUrl: `${URL}/IMG_3411.jpeg`,
       splashImageUrl: `${URL}/IMG_3411.jpeg`,
       splashBackgroundColor: "#0f172a",
+      buttonTitle: "Launch App",
       webhookUrl: `${URL}/api/webhook`,
       subtitle: "Trade creator coins on Base",
       description: "Trade creator coins and content coins on the Niche platform. Every post becomes an instantly tradeable cryptocurrency token on Base network.",
@@ -36,13 +35,11 @@ export async function GET() {
         `${URL}/IMG_3411.jpeg`
       ],
       primaryCategory: "social",
-      tags: ["crypto", "creator-economy", "trading", "base", "coins", "social", "defi", "web3", "nft", "tokens"],
-      heroImageUrl: `${URL}/IMG_3411.jpeg`,
       tagline: "Every post is a tradeable token",
       ogTitle: "Find Your Niche - Creator Economy Platform",
       ogDescription: "Trade creator coins and content coins. Every post becomes an instantly tradeable cryptocurrency token on Base.",
       ogImageUrl: `${URL}/IMG_3411.jpeg`,
-      noindex: false
+      castShareUrl: URL
     }
   };
 
