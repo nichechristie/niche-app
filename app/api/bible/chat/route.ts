@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 const BIBLE_SYSTEM_PROMPT = `You are a knowledgeable and compassionate Bible study assistant with extensive knowledge of:
 
 1. **Biblical Scripture**: Complete understanding of all 66 books of the Bible (Old and New Testament), including original languages (Hebrew, Aramaic, Greek)
@@ -54,6 +50,11 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Initialize OpenAI client
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
     // Call OpenAI API with Bible knowledge system prompt
     const completion = await openai.chat.completions.create({
