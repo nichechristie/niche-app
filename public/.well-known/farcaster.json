@@ -18,6 +18,12 @@
     "screenshotUrls": [
       "https://niche-app-liart.vercel.app/IMG_3411.jpeg"
     ],
-    "primaryCategory": "social"
+    "primaryCategory": "social",
+    "tagline": "Every post is a tradeable token",
+    "buttonTitle": "Launch App",
+    "ogTitle": "Find Your Niche - Creator Economy Platform",
+    "ogDescription": "Trade creator coins and content coins. Every post becomes an instantly tradeable cryptocurrency token on Base.",
+    "ogImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
+    "castShareUrl": "https://niche-app-liart.vercel.app"
   }
 }
