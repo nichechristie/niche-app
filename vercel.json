@@ -2,13 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "redirects": [
-    {
-      "source": "/.well-known/farcaster.json",
-      "destination": "https://api.farcaster.xyz/miniapps/hosted-manifest/019a7fad-6ebb-f1ea-1b8f-546d811f129e",
-      "permanent": false
-    }
-  ],
   "headers": [
     {
       "source": "/IMG_3411.jpeg",
