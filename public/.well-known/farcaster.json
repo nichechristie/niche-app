@@ -2,7 +2,7 @@
   "accountAssociation": {
     "header": "eyJmaWQiOjE0Mzg3MjMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhCZTNDMTZFMDkxMGVhRTI4ZDBhYzFDQzM1NDdiMDA3OUI4MjMwODljIn0",
     "payload": "eyJkb21haW4iOiJuaWNoZS1hcHAtbGlhcnQudmVyY2VsLmFwcCJ9",
-    "signature": "7unNMd+MZJvBY7PiXwmM6c9BPAzamulmOfaBDFbtszcoFAnzV9PmeaNW30Qs6/rgBQj3zjP5m8QQDdcfx27tfxw="
+    "signature": "MHg3dW5OTWQrTVpKdkJZN1BpWHdtTTZjOUJQQXphbXVsbU9mYUJERmJ0c3pjb0ZBbnpWOXBtZWFOVzMwUXM2L3JnQlFqM3pqUDVtOFFRRGRjZng5N3RmeHc9"
   },
   "frame": {
     "version": "1",
@@ -19,7 +19,11 @@
       "https://niche-app-liart.vercel.app/IMG_3411.jpeg"
     ],
     "primaryCategory": "social",
-    "heroImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
-    "ogImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg"
+    "tagline": "Every post is a tradeable token",
+    "buttonTitle": "Launch App",
+    "ogTitle": "Find Your Niche - Creator Economy Platform",
+    "ogDescription": "Trade creator coins and content coins. Every post becomes an instantly tradeable cryptocurrency token on Base.",
+    "ogImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
+    "castShareUrl": "https://niche-app-liart.vercel.app"
   }
 }
