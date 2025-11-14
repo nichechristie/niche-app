@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useReadContract } from 'wagmi';
 import { formatUnits } from 'viem';
 
-const REWARDS_MANAGER_ADDRESS = '0x0000000000000000000000000000000000000000'; // TODO: Update after deployment
+const REWARDS_MANAGER_ADDRESS = '0xd9145CCE52D386f254917e481eB44e9943F39138';
 
 interface LeaderboardEntry {
   address: string;

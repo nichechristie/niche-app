@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract } from 'wagmi';
 import { parseUnits, formatUnits } from 'viem';
 
-const REWARDS_MANAGER_ADDRESS = '0x0000000000000000000000000000000000000000'; // TODO: Update after deployment
-const TOKEN_ADDRESS = '0x0000000000000000000000000000000000000000'; // TODO: Update with your Clanker token
+const REWARDS_MANAGER_ADDRESS = '0xd9145CCE52D386f254917e481eB44e9943F39138';
+const TOKEN_ADDRESS = '0x5ab1A8dBB78c272540D3652dAc9c46d9CBFcECBf';
 
 // Reward tiers
 const TIERS = {
