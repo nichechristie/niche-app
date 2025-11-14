@@ -4,9 +4,8 @@
 <!-- Creator Portrait -->
 ![Creator Portrait](./IMG_3411.jpeg)
 
-**Find Your Niche** turns social content into a real Web3 marketplace.  
-Every post becomes a token. Every creator becomes a coin.  
-Every interaction becomes value. 🚀
+**Find Your Niche** transforms social content into a Web3 marketplace where  
+posts become tokens, creators launch their own coins, and communities trade value. 🚀
 
 ---
 
@@ -14,81 +13,44 @@ Every interaction becomes value. 🚀
 
 - 💰 **Tokenized Content** — Mint posts into tradable assets.  
 - 🪙 **Creator Coins** — Launch your own coin in seconds.  
-- 🔄 **Instant Trading** — Fast swaps powered by Base.  
+- 🔄 **Instant Trading** — Fast swaps on Base.  
 - 🎰 **Blackjack Game** — Casino vibes + engagement rewards.  
-- 🌐 **Creator Economy Engine** — A brand-new social x crypto layer.  
-- 🔐 **Wallet Login** — Fully decentralized and on-chain.
+- 🌐 **Creator Economy Layer** — Social + financial in one place.  
+- 🔐 **Wallet Login** — Fully decentralized and user-owned.
 
 ---
 
-## 🎬 Demo Video
+## 🎬 Demo Videos
 
-Choose the version that works best:
-
-### 📹 Option A — Main Demo  
-**Embedded video:**  
-![Demo Video](./download.mp4)
-
-**Direct link:**  
-[Click to watch](./download.mp4)
+### ▶ Main Demo
+<video width="100%" controls>
+  <source src="./download.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
-### 📹 Option B — Alt Demo  
-**Embedded video:**  
-![Alt Demo](./download%202.mp4)
-
-**Direct link:**  
-[Click to watch](./download%202.mp4)
+### ▶ Alt Demo
+<video width="100%" controls>
+  <source src="./download 2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Connect Wallet** (Base network).  
-2. **Create a Post** → automatically tokenized.  
+1. **Connect Wallet** (Base Network).  
+2. **Create a Post** → instantly tokenized.  
 3. **Mint Your Creator Coin**.  
 4. **Explore & Trade** trending creators.  
-5. **Play Blackjack** for rewards + engagement boosts.  
-6. **Grow your niche** — your community builds your value.
+5. **Play Blackjack** to earn rewards.  
+6. **Grow your niche** as your community expands.
 
 ---
 
 ## 🧩 Core Features
 
-### 📢 Tokenized Feed  
-Post -> Mint -> Trade.  
-Your content becomes an on-chain collectible.
+### 📢 Tokenize
 
-### 👥 Creator Coins  
-Launch your own coin and build a market around your identity.
 
-### 🔍 Explore Page  
-Discover trending creators and content markets.
-
-### 💱 Marketplace  
-Fast swaps with clean UI and Base-native pricing.
-
-### 🎰 Blackjack Mode  
-Neon casino vibes + interactive gameplay.
-
-### 🔗 Smart Contracts  
-Base-native, creator-first, transparent.
-
----
-
-## 🛠 Tech Stack
-
-- **Next.js / React**  
-- **Base L2 blockchain**  
-- **Smart contracts for creator coins & tokenized posts**  
-- **On-chain trading logic**  
-- **WalletConnect / Coinbase Wallet support**
-
----
-
----
-
-## ⭐ Build Your Niche  
-You're early.  
-The creator economy is just getting started — and you're leading it. 🌟
