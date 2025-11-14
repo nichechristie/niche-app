@@ -5,7 +5,7 @@ function withValidProperties(properties: Record<string, undefined | string | str
 }
 
 export async function GET() {
-  const URL = process.env.NEXT_PUBLIC_URL || 'https://findyourniche.shop';
+  const URL = process.env.NEXT_PUBLIC_URL || 'https://niche-app-liart.vercel.app';
   const BASE_OWNER_ADDRESS = process.env.NEXT_PUBLIC_BASE_OWNER_ADDRESS || '0x';
 
   // Account association credentials - generate these for your Farcaster account

@@ -1,7 +1,7 @@
 {
   "accountAssociation": {
     "header": "eyJmaWQiOjE0Mzg3MjMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhCZTNDMTZFMDkxMGVhRTI4ZDBhYzFDQzM1NDdiMDA3OUI4MjMwODljIn0=",
-    "payload": "eyJkb21haW4iOiJodHRwczovL2ZpbmR5b3VybmljaGUuc2hvcCJ9",
+    "payload": "eyJkb21haW4iOiJodHRwczovL25pY2hlLWFwcC1saWFydC52ZXJjZWwuYXBwIn0=",
     "signature": "0xc91978f02741bc2f6981ddf5ec15f7a4af929f89f0c99ce76b2d8a61cb0a804f4d711a1caa9f0e69b2a246e89cef930e6cd6ddf67ee467e119d662f3c862359f1b"
   },
   "baseBuilder": {
@@ -10,23 +10,23 @@
   "miniapp": {
     "version": "1",
     "name": "Find Your Niche",
-    "homeUrl": "https://findyourniche.shop",
-    "iconUrl": "https://findyourniche.shop/IMG_3411.jpeg",
-    "splashImageUrl": "https://findyourniche.shop/IMG_3411.jpeg",
+    "homeUrl": "https://niche-app-liart.vercel.app",
+    "iconUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
+    "splashImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
     "splashBackgroundColor": "#0f172a",
-    "webhookUrl": "https://findyourniche.shop/api/webhook",
+    "webhookUrl": "https://niche-app-liart.vercel.app/api/webhook",
     "subtitle": "Trade creator coins on Base",
     "description": "Trade creator coins and content coins on the Niche platform. Every post becomes an instantly tradeable cryptocurrency token on Base network.",
     "screenshotUrls": [
-      "https://findyourniche.shop/IMG_3411.jpeg"
+      "https://niche-app-liart.vercel.app/IMG_3411.jpeg"
     ],
     "primaryCategory": "social",
     "tags": ["crypto", "creator-economy", "trading", "base", "coins", "social", "defi", "web3", "nft", "tokens"],
-    "heroImageUrl": "https://findyourniche.shop/IMG_3411.jpeg",
+    "heroImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
     "tagline": "Every post is a tradeable token",
     "ogTitle": "Find Your Niche - Creator Economy Platform",
     "ogDescription": "Trade creator coins and content coins. Every post becomes an instantly tradeable cryptocurrency token on Base.",
-    "ogImageUrl": "https://findyourniche.shop/IMG_3411.jpeg",
+    "ogImageUrl": "https://niche-app-liart.vercel.app/IMG_3411.jpeg",
     "noindex": false
   }
 }
