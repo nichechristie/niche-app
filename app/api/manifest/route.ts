@@ -36,7 +36,7 @@ export async function GET() {
         `${URL}/IMG_3411.jpeg`
       ],
       primaryCategory: "social",
-      tags: ["crypto", "creator-economy", "trading", "base", "coins", "social"],
+      tags: ["crypto", "creator-economy", "trading", "base", "coins", "social", "defi", "web3", "nft", "tokens"],
       heroImageUrl: `${URL}/IMG_3411.jpeg`,
       tagline: "Every post is a tradeable token",
       ogTitle: "Find Your Niche - Creator Economy Platform",
