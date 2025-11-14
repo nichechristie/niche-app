@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { WalletButton } from "./WalletButton";
 import { Avatar3D } from "./Avatar3D";
+import { CartButton } from "./CartButton";
+import { CartModal } from "./CartModal";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -76,9 +78,17 @@ export function Header() {
                 🎰 Blackjack
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all"></span>
               </Link>
+              <Link
+                href="/store"
+                className="text-gray-300 hover:text-indigo-400 transition-colors relative group flex items-center gap-1"
+              >
+                🛍️ Store
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all"></span>
+              </Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">
+            <CartButton />
             {/* Earn NICHE Badge */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/50 rounded-full animate-pulse">
               <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
@@ -178,6 +188,13 @@ export function Header() {
               >
                 🎰 Blackjack
               </Link>
+              <Link
+                href="/store"
+                className="text-gray-300 hover:text-indigo-400 transition-colors px-2 py-2 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                🛍️ Store
+              </Link>
               <a
                 href="https://twitter.com/creatorniche"
                 target="_blank"
@@ -193,6 +210,7 @@ export function Header() {
           </div>
         )}
       </div>
+      <CartModal />
     </header>
   );
 }
