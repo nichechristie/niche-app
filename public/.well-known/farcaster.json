@@ -15,6 +15,9 @@
     "webhookUrl": "https://niche-app-liart.vercel.app/api/webhook",
     "subtitle": "Trade creator coins on Base",
     "description": "Trade creator coins and content coins on the Niche platform. Every post becomes an instantly tradeable cryptocurrency token on Base network.",
+    "screenshotUrls": [
+      "https://niche-app-liart.vercel.app/IMG_3411.jpeg"
+    ],
     "primaryCategory": "social"
   }
 }
