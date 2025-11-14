@@ -4,9 +4,6 @@
     "payload": "eyJkb21haW4iOiJodHRwczovL25pY2hlLWFwcC1saWFydC52ZXJjZWwuYXBwIn0=",
     "signature": "0xc91978f02741bc2f6981ddf5ec15f7a4af929f89f0c99ce76b2d8a61cb0a804f4d711a1caa9f0e69b2a246e89cef930e6cd6ddf67ee467e119d662f3c862359f1b"
   },
-  "baseBuilder": {
-    "ownerAddress": "0x"
-  },
   "miniapp": {
     "version": "1",
     "name": "Find Your Niche",
