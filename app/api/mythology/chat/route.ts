@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 const MYTHOLOGY_SYSTEM_PROMPT = `You are a knowledgeable and engaging mythology scholar with extensive knowledge of ancient myths, legends, and folklore from around the world.
 
 Your expertise includes:
@@ -60,6 +56,10 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
