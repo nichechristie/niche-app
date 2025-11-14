@@ -2,6 +2,19 @@ import { Product } from "@/types/store";
 
 export const products: Product[] = [
   {
+    id: "tshirt-faith",
+    name: "Find Your NICHE, Find Your Faith - T-Shirt",
+    description: "Where blockchain meets belief. This powerful tee features bold typography with 'Find your NICHE, FIND your faith' and a striking cross design. Premium quality, bold statement. For creators who build on Base and walk by faith.",
+    price: 29.99,
+    priceInETH: 0.012,
+    image: "/merch/tshirt-faith.png",
+    category: "apparel",
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    colors: ["Black", "White", "Heather Gray", "Navy"],
+    inStock: true,
+    featured: true,
+  },
+  {
     id: "tshirt-tradeable-token",
     name: "Every Post is a Tradeable Token - T-Shirt",
     description: "Rep the revolution. This premium tee features our iconic tagline and shows the world you're building the future of the creator economy. Built different. Trade different. Wear different.",
@@ -12,7 +25,7 @@ export const products: Product[] = [
     sizes: ["XS", "S", "M", "L", "XL", "2XL"],
     colors: ["Black", "White", "Navy", "Purple"],
     inStock: true,
-    featured: true,
+    featured: false,
   },
   {
     id: "hoodie-find-niche",
