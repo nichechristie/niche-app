@@ -52,17 +52,6 @@ export const products: Product[] = [
     inStock: true,
   },
   {
-    id: "sticker-pack",
-    name: "Niche Vibes - Sticker Pack",
-    description: "Laptop? Phone? Water bottle? Deck it out with Find Your Niche stickers. Featuring our logo, $NICHE coin, and exclusive creator economy artwork.",
-    price: 9.99,
-    priceInETH: 0.004,
-    image: "/merch/stickers-niche.png",
-    category: "accessories",
-    inStock: true,
-    featured: true,
-  },
-  {
     id: "mug-trade-coins",
     name: "Trade Coins, Sip Coffee, Build Empire - Mug",
     description: "Start your morning right. This ceramic mug holds your coffee while you hold your coins. Microwave and dishwasher safe. Capitalism not included.",
