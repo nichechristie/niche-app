@@ -2,9 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 import { uploadFile } from "@/lib/server/uploadFile";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy-load OpenAI client to avoid build-time initialization
+function getOpenAIClient() {
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,6 +30,7 @@ export async function POST(request: NextRequest) {
     console.log(`Generating image for prompt: ${prompt}`);
 
     // Generate image with DALL-E 3
+    const openai = getOpenAIClient();
     const response = await openai.images.generate({
       model: "dall-e-3",
       prompt: prompt,

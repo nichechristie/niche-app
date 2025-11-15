@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy-load OpenAI client to avoid build-time initialization
+function getOpenAIClient() {
+  return new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
+}
 
 const BIBLE_SYSTEM_PROMPT = `You are a knowledgeable and compassionate Bible study assistant with extensive knowledge of:
 
@@ -56,6 +59,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Call OpenAI API with Bible knowledge system prompt
+    const openai = getOpenAIClient();
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
