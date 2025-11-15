@@ -65,6 +65,13 @@ export function Header() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all"></span>
               </Link>
               <Link
+                href="/jesus"
+                className="text-gray-300 hover:text-indigo-400 transition-colors relative group flex items-center gap-1"
+              >
+                ✝️ Jesus
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-400 group-hover:w-full transition-all"></span>
+              </Link>
+              <Link
                 href="/mythology"
                 className="text-gray-300 hover:text-indigo-400 transition-colors relative group flex items-center gap-1"
               >
@@ -180,6 +187,13 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 👑 Kings
+              </Link>
+              <Link
+                href="/jesus"
+                className="text-gray-300 hover:text-indigo-400 transition-colors px-2 py-2 flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                ✝️ Jesus
               </Link>
               <Link
                 href="/mythology"
