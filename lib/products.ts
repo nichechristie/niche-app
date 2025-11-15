@@ -29,8 +29,8 @@ export const products: Product[] = [
   },
   {
     id: "hoodie-find-niche",
-    name: "Find Your Niche - Hoodie",
-    description: "Stay warm while your portfolio heats up. Premium quality hoodie featuring the Find Your Niche logo. For creators who build on Base and never stop grinding.",
+    name: "Find Your Faith & NICHE - Hoodie",
+    description: "Double the message, double the impact. Premium hoodie with 'Find your faith' on the front and 'Find your NICHE' on the back. Stay warm while your portfolio heats up. For creators who build on Base and walk by faith.",
     price: 54.99,
     priceInETH: 0.022,
     image: "/merch/hoodie-niche.png",
